@@ -10,7 +10,6 @@
     "outDir": "tsickle-output"
   },
   "files": [
-    "src/Box.ts",
-    "src/Apple.ts"
+    "src/Box.ts"
   ]
 }
