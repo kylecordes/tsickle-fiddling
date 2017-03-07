@@ -1,0 +1,19 @@
+{
+  "angularCompilerOptions": {
+    "annotationsAs": "decorators",
+    "annotateForClosureCompiler": true
+  },
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "types": [],
+    "target": "es2015",
+    "outDir": "../built"
+  },
+  "files": [
+    "Box.ts",
+    "Apple.ts"
+  ]
+}

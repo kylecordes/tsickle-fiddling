@@ -6,10 +6,10 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "clean": "rimraf tsickle-output output.js",
+    "clean": "rimraf built tsickle-output output.js",
     "closure": "./run_closure.sh",
-    "tsickle": "tsickle --untyped -- -p .",
-    "tsc": "tsc -p .",
+    "tsickle": "tsickle -- -p src",
+    "tsc": "tsc -p src",
     "build_with_tsc": "run-s clean tsc closure",
     "build_with_tsickle": "run-s clean tsickle closure"
   },
@@ -18,6 +18,6 @@
     "npm-run-all": "^4.0.2",
     "rimraf": "^2.6.1",
     "tsickle": "^0.21.5",
-    "typescript": "^2.2"
+    "typescript": "2.2.1"
   }
 }
