@@ -1,0 +1,16 @@
+{
+  "angularCompilerOptions": {
+    "annotationsAs": "static fields",
+    "annotateForClosureCompiler": true
+  },
+  "compilerOptions": {
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "target": "es6",
+    "outDir": "tsickle-output"
+  },
+  "files": [
+    "src/Box.ts",
+    "src/Apple.ts"
+  ]
+}

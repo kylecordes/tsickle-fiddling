@@ -1,0 +1,23 @@
+{
+  "name": "@kylecordes/tsickle-fiddling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "output.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rimraf tsickle-output output.js",
+    "closure": "./run_closure.sh",
+    "tsickle": "tsickle --untyped -- -p .",
+    "tsc": "tsc -p .",
+    "build_with_tsc": "run-s clean tsc closure",
+    "build_with_tsickle": "run-s clean tsickle closure"
+  },
+  "dependencies": {
+    "google-closure-compiler": "^20170218.0.0",
+    "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.1",
+    "tsickle": "^0.21.5",
+    "typescript": "^2.2"
+  }
+}
