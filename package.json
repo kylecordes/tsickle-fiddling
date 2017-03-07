@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf tsickle-output output.js",
     "closure": "./run_closure.sh",
-    "tsickle": "tsickle --untyped -- -p .",
+    "tsickle": "tsickle -- -p .",
     "tsc": "tsc -p .",
     "build_with_tsc": "run-s clean tsc closure",
     "build_with_tsickle": "run-s clean tsickle closure"

@@ -25,3 +25,8 @@ java.lang.RuntimeException: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
 Please report this problem.
 ```
 
+# UPDATE - fixed
+
+This was broken because the tsickle requires module: common. That is now fixed
+in the latest commit. Upcoming tsickle will emit in error when used with the
+wrong setting.
