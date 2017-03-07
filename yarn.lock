@@ -344,6 +344,18 @@ rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
+"rxjs-src@git+https://github.com/ReactiveX/rxjs.git#5.1.1":
+  version "5.1.1"
+  resolved "git+https://github.com/ReactiveX/rxjs.git#996bf6d8ae8bedc6ca4ed9daf2c3d6e0244bfbcd"
+  dependencies:
+    symbol-observable "^1.0.1"
+
+rxjs@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.1.1.tgz#fc48922965bc6c5efbcc0fe46e90a3af64137a7b"
+  dependencies:
+    symbol-observable "^1.0.1"
+
 "semver@2 || 3 || 4 || 5":
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
@@ -424,6 +436,10 @@ strip-bom@^3.0.0:
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
+
+symbol-observable@^1.0.1:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
 through@2, through@~2.3, through@~2.3.1:
   version "2.3.8"

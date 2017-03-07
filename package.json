@@ -6,17 +6,18 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "clean": "rimraf built tsickle-output output.js",
+    "clean": "rimraf built rxjs output.js",
     "closure": "./run_closure.sh",
-    "tsickle": "tsickle -- -p src",
-    "tsc": "tsc -p src",
-    "build_with_tsc": "run-s clean tsc closure",
-    "build_with_tsickle": "run-s clean tsickle closure"
+    "tsickle_app": "tsickle -- -p src",
+    "tsickle_rxjs": "tsickle -- -p .",
+    "build": "run-s clean tsickle_app tsickle_rxjs closure"
   },
   "dependencies": {
     "google-closure-compiler": "^20170218.0.0",
     "npm-run-all": "^4.0.2",
     "rimraf": "^2.6.1",
+    "rxjs": "5.1.1",
+    "rxjs-src": "git+https://github.com/ReactiveX/rxjs.git#5.1.1",
     "tsickle": "^0.21.5",
     "typescript": "2.2.1"
   }

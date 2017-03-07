@@ -13,7 +13,6 @@
     "outDir": "../built"
   },
   "files": [
-    "Box.ts",
-    "Apple.ts"
+    "main.ts"
   ]
 }

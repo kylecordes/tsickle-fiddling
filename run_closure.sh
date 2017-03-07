@@ -7,11 +7,10 @@ OPTS=(
   "--compilation_level=ADVANCED_OPTIMIZATIONS"
   "--js_output_file=output.js"
 
-  "--js_module_root=built"
+  $(find rxjs -name *.js)
+  $(find built -name *.js)
 
-  "built/*.js"
-
-  "--entry_point=built.Box"
+  "--entry_point=built.main"
   "--dependency_mode=STRICT"
 )
 
