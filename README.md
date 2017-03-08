@@ -32,11 +32,58 @@ this experiment would be better conducted with a smaller library.
 
 ## Current status
 
+The current state is that it appears there are only three problems in all of Our
+extraneous that prevents a clean tsickle and Closure compile.
+
+### 1) Closure "The body of a goog.module cannot use throw."
+
+Details of the warning:
+
 ```
 rxjs/util/root.js:11: ERROR - The body of a goog.module cannot use throw.
     throw new Error('RxJS could not find any global context (window, self, global)');
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
+
+This repo has a workaround for this problem. It simply comments out the line of
+code. That won't matter unless someone somehow finds a way to run the code in an
+environment lacking any of those globals.
+
+Proposed solution: rather than wait for the Closure team to possibly relieve
+this limitation, simply put an IIFE around it upstream in RX JS.
+
+### 2) Dependency problem with Observable.empty()
+
+Consuming application code must do: `import 'rxjs/add/observable/empty';` to
+make .empty() available so Notification can be compiled by Closure. I believe
+this indicates some difficulty in how dependencies are translated from
+TypeScript to Closure - but it is surprising that this is the only symptom of
+such a problem. Hopefully this means it is a minor problem.
+
+I don't have a proposed solution for this one yet. I don't know if this problem
+will grow as more of RxJS is used in a consuming application, or whether it is
+just this one glitch that could be worked around easily. This one needs ideas
+from someone deeply familiar with tsickle.
+
+### 3) Array access TypeScript construct
+
+The following construct appears in the TypeScript code:
+
+```
+export class Subscriber<T> extends Subscription implements Observer<T> {
+  [$$rxSubscriber]() { return this; }
+```
+
+Tsickle passes the important bit through essentially unchanged, Closure warns about it:
+
+```
+rxjs/Subscriber.js:60: WARNING - Cannot do '[]' access on a struct
+    [rxSubscriber_1.$$rxSubscriber]() { return this; }
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
+
+This one is an open question: Is this a mismatch of the type systems? A missing
+feature in tsickle?
 
 ## Miscellaneous explanation
 

@@ -7,6 +7,11 @@ OPTS=(
   "--compilation_level=ADVANCED_OPTIMIZATIONS"
   "--js_output_file=output.js"
 
+  # More warnings - but you only see one before exiting as an error.
+  # Appears to add more warnings, rather than make the same warnigs
+  # more verbose.
+  # "--warning_level=VERBOSE"
+
   $(find rxjs -name *.js)
   $(find built -name *.js)
 
@@ -17,5 +22,3 @@ OPTS=(
 closureFlags=$(mktemp)
 echo ${OPTS[*]} > $closureFlags
 java -jar node_modules/google-closure-compiler/compiler.jar --flagfile $closureFlags
-
-node ./output.js
